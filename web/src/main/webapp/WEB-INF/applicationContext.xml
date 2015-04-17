@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/oxm
+           http://www.springframework.org/schema/oxm/spring-oxm-1.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath*:/trackview-core-context.xml" />
+
+	<context:component-scan base-package="com.ca.webanalytics" />
+
+	<oxm:jaxb2-marshaller id="marshaller">
+		<oxm:class-to-be-bound name="com.ca.webanalytics.entity.WebAnalyticsList" />
+		<oxm:class-to-be-bound name="com.ca.webanalytics.entity.WebAnalytics" />
+		<oxm:class-to-be-bound name="com.ca.webanalytics.entity.PageViews" />
+	</oxm:jaxb2-marshaller>
+
+</beans>

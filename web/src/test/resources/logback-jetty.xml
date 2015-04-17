@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%M:%L]  - %msg%n</Pattern>
+		</layout>
+	</appender>
+	
+	<logger name="org.mortbay.jetty.Response" level="OFF"/>
+	<logger name="org.mortbay.jetty.plus.webapp.EnvConfiguration" level="OFF"/>	
+	<logger name="org.mortbay" level="ERROR"/>
+	
+    <root level="ERROR">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+</configuration>
